@@ -36,14 +36,13 @@ public class SecurityConfig {
                     )
             )
 
-            .authorizeHttpRequests(auth -> auth
-                    .requestMatchers(
-                            "/users/register",
-                            "/users/login"
-                    ).permitAll()
-
-                    .anyRequest().authenticated()
-            )
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(
+                                "/users/register",
+                                "/users/login"
+                        ).permitAll()
+                        .anyRequest().authenticated()
+                )
 
             .addFilterBefore(
                     jwtFilter(),
