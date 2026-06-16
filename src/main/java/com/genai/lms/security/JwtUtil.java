@@ -1,5 +1,6 @@
 package com.genai.lms.security;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
 
@@ -10,8 +11,13 @@ import io.jsonwebtoken.security.Keys;
 
 public class JwtUtil {
 
+    private static final String SECRET =
+            "mysecretkeymysecretkeymysecretkey12345";
+
     private static final Key SECRET_KEY =
-            Keys.secretKeyFor(SignatureAlgorithm.HS256);
+            Keys.hmacShaKeyFor(
+                    SECRET.getBytes(StandardCharsets.UTF_8)
+            );
 
     public static String generateToken(String email) {
 
@@ -19,9 +25,15 @@ public class JwtUtil {
                 .setSubject(email)
                 .setIssuedAt(new Date())
                 .setExpiration(
-                        new Date(System.currentTimeMillis() + 3600000)
+                        new Date(
+                                System.currentTimeMillis()
+                                        + 1000 * 60 * 60
+                        )
                 )
-                .signWith(SECRET_KEY)
+                .signWith(
+                        SECRET_KEY,
+                        SignatureAlgorithm.HS256
+                )
                 .compact();
     }
 
