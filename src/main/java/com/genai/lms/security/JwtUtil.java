@@ -19,7 +19,7 @@ public class JwtUtil {
                 .setSubject(email)
                 .setIssuedAt(new Date())
                 .setExpiration(
-                        new Date(System.currentTimeMillis() + 1000 * 60 * 60)
+                        new Date(System.currentTimeMillis() + 3600000)
                 )
                 .signWith(SECRET_KEY)
                 .compact();
@@ -48,6 +48,7 @@ public class JwtUtil {
             return true;
 
         } catch (Exception e) {
+
             return false;
         }
     }

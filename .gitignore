@@ -1,33 +1,68 @@
-HELP.md
+# Maven
 target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
 
-### STS ###
+# Wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse
 .apt_generated
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IntelliJ
+.idea/
 *.iml
 *.ipr
+*.iws
+out/
 
-### NetBeans ###
+# VS Code
+.vscode/
+
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# Logs
+logs/
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Environment Files
+.env
+.env.*
+.env.local
+
+# Secret Config Files
+application-local.properties
+application-dev.properties
+application-prod.properties
+
+# Generated Files
+*.class
+*.jar
+*.war
+
+# Test Reports
+surefire-reports/
+failsafe-reports/
+
+# Temporary Files
+*.tmp
+*.temp
