@@ -1,5 +1,6 @@
 package com.genai.lms.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class User {
 
     private String email;
 
+    @JsonIgnore
     private String password;
 
     private String role;
