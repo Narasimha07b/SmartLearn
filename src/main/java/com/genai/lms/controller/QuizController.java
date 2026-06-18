@@ -18,6 +18,8 @@ public class QuizController {
     @PostMapping
     public Quiz createQuiz(@RequestBody Quiz quiz) {
 
+        System.out.println(quiz);
+
         return quizService.createQuiz(quiz);
     }
 

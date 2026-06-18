@@ -1,5 +1,6 @@
 package com.genai.lms.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -19,6 +20,6 @@ public class Course {
 
     @OneToMany(mappedBy = "course",
             cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonIgnore
     private List<Lesson> lessons;
 }

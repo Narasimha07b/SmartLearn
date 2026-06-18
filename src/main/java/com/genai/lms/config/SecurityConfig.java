@@ -41,6 +41,7 @@ public class SecurityConfig {
                                 "/courses/**",
                                 "/lessons/**",
                                 "/enrollments/**",
+                                "/questions/**",
                                 "/quiz/**"
                         ).permitAll()
 

@@ -27,7 +27,5 @@ public class Lesson {
 
     @ManyToOne
     @JoinColumn(name = "course_id")
-    @JsonBackReference
-    @JsonIgnore
     private Course course;
 }
